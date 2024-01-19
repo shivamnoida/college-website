@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>HTML Calculator</title> 
+  
+    
+    <style> 
+        table { 
+            border: 1px solid black; 
+            margin-left: auto; 
+            margin-right: auto; 
+        } 
+          
+        input[type="button"] { 
+            width: 100%; 
+            padding: 20px 40px; 
+            background-color: rgb(13, 100, 175); 
+            color: white; 
+            font-size: 24px; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 5px; 
+        } 
+          
+        input[type="text"] { 
+            padding: 20px 30px; 
+            font-size: 24px; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 5px; 
+            border: 2px solid black; 
+        } 
+    </style> 
+</head> 
+  
+<body> 
+  
+    
+    <table id="calcu"> 
+        <tr> 
+            <td colspan="3"> 
+                <input type="text" id="output"> 
+            </td> 
+            <td><input type="button"   value="c" onclick="clr()"></td> 
+        </tr> 
+  
+        <tr> 
+            <td><input type="button" id="cal" onclick="dis('1')" value="1"></td> 
+            <td><input type="button" id="cal"value="2" onclick="dis('2')"></td> 
+            <td><input type="button" value="3"id="cal" onclick="dis('3')"></td> 
+            <td><input type="button" id="cal"value="/" onclick="dis('/')"></td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" id="cal" value="4" onclick="dis('4')"></td> 
+            <td><input type="button" id="cal" value="5" onclick="dis('5')"></td> 
+            <td><input type="button" value="6" id="cal" onclick="dis('6')"></td> 
+            <td><input type="button" id="cal" value="" onclick="dis('')"></td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="7" id="cal" onclick="dis('7')"></td> 
+            <td><input type="button" id="cal" value="8" onclick="dis('8')"></td> 
+            <td><input type="button" value="9" id="cal" onclick="dis('9')"></td> 
+            <td><input type="button" value="-" id="cal" onclick="dis('-')"></td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="0" id="cal" onclick="dis('0')"></td> 
+            <td><input type="button" value="." id="cal" onclick="dis('.')"></td> 
+            <td><input type="button" value="="  onclick="result()"></td> 
+            <td><input type="button" value="+" id="cal" onclick="dis('+')"></td> 
+        </tr> 
+    </table> 
+
+    <script>
+        function dis(val){
+            document.getElementById("output").value += val
+        }
+        function result(){
+            var x = document.getElementById("output").value
+            var y = eval(x)
+            document.getElementById("output").value = y
+        }
+        function clr(){
+            document.getElementById("output").value = ""
+        }
+    </script>
+</body> 
+  
+</html>
